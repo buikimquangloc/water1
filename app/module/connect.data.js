@@ -1,12 +1,13 @@
 const mysql = require('mysql');
 
-var connect = mysql.createConnection({
+var connection = mysql.createConnection({
     host :'localhost',
     user : 'root',
     password : '',
     database: 'water',
  });
  
+ module.exports = connection;
 //  conn.connect(function (err){
 //     if(err)
 //     {
@@ -16,4 +17,3 @@ var connect = mysql.createConnection({
 //         console.log('Đã kết nối với cơ sở dữ liệu.');
 //  })
  
- module.exports = connect;

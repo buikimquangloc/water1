@@ -8,12 +8,12 @@ import sodabh from '../../../asset/image/soda_bacha.png'
 
 export default function ActionAreaCard() {
     return (
-        <Card sx={{ maxWidth: 300,  }}>
+        <Card sx={{ maxWidth: 300,  maxHeight: 600,}}>
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="50%"
-                    width="100%"
+                    // height="100%"
+                    // width="100%"
                     alt="soda_bac_ha"
                     src={sodabh}
                 />
@@ -26,8 +26,6 @@ export default function ActionAreaCard() {
                         Xem thêm chi tiết
                     </Typography>
                     <Button sx={{
-                        mt: 2,
-                        mb: 2,
                         width: '100%',
                         display: 'flex',
                         justifyContent: 'center',
