@@ -1,7 +1,5 @@
 const app = require('./app');
-const config = require('./app/config');
-
-const connection = require('./app/module/connect.data');
+const config = require('./app/config/config');
     
 async function startServer() {
     try 
@@ -16,14 +14,6 @@ async function startServer() {
         process.exit();
     }
 }
-
-// connection.query(
-//     "select * from sanpham",
-//     function(err, results, fields) {
-//         // if (err) throw err;
-//         console.log('-> kết quả: ', results);
-//     }
-// )
 
 startServer();
  
