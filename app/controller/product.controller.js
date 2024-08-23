@@ -1,10 +1,8 @@
-// import product from "../service/product.service"
 
-exports.create = (req, res) => {
-    res.send({ message: "create" });
-};
+const getProduct = (req, res) => {
+    res.send('Welcome Home!!');
+}
 
-exports.findAll = (req, res) => {
-    res.send({ message: "fillall" });
-
-};
+module.exports = {
+    getProduct,
+}

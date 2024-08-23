@@ -1,19 +1,13 @@
-const mysql = require('mysql');
+const mysql = require('mysql/promise');
 
-var connection = mysql.createConnection({
+var connection = mysql.createPool({
     host :'localhost',
     user : 'root',
     password : '',
     database: 'water',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0,
  });
  
  module.exports = connection;
-//  conn.connect(function (err){
-//     if(err)
-//     {
-//         console.error('Lỗi kết nối: ' + err.stack);
-//         return;    }
-//     else
-//         console.log('Đã kết nối với cơ sở dữ liệu.');
-//  })
- 
