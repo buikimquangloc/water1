@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  User.init({
+  Nhanvien.init({
     MaCV: DataTypes.CHAR(16),
     SDT_NV: DataTypes.STRING,
     Email_NV: DataTypes.STRING,
