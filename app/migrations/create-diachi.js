@@ -3,22 +3,22 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Diachi', {
-      id_DC: {
+      id_dc: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      Tentinh: {
+      tentinh: {
         type: Sequelize.STRING
       },
-      Tenhuyen: {
+      tenhuyen: {
         type: Sequelize.STRING
       },
-      Tenxa: {
+      tenxa: {
         type: Sequelize.STRING
       },
-      Chitiet: {
+      chitiet: {
         type: Sequelize.STRING
       },
     });

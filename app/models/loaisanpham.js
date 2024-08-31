@@ -3,17 +3,16 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Sanpham extends Model {
+  class Loaisp extends Model {
     static associate(models) {
       // define association here
     }
   }
-  Sanpham.init({
-    tensp: DataTypes.STRING,
-    tonkho: DataTypes.INTEGER,
+  Loaisp.init({
+    tenloai: DataTypes.STRING,
   }, {
     sequelize,
-    modelName: 'Sanpham',
+    modelName: 'Loaisp',
   });
-  return Sanpham;
+  return Loaisp;
 }; 

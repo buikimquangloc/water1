@@ -3,22 +3,22 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Nhanvien', {
-      id: {
+      id_nv: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      MaCV: {
-        type: Sequelize.CHAR(16)
-      },
-      SDT_NV: {
+      // id_cv: {
+      //   type: Sequelize.CHAR(16)
+      // },
+      sdt_nv: {
         type: Sequelize.STRING
       },
-      Email_NV: {
+      email_nv: {
         type: Sequelize.STRING
       },
-      Password_NV: {
+      password_nv: {
         type: Sequelize.STRING
       },
     });

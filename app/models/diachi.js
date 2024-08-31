@@ -9,10 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Diachi.init({
-    Tentinh: DataTypes.STRING,
-    Tenhuyen: DataTypes.STRING,
-    Tenxa: DataTypes.STRING,
-    Chitiet: DataTypes.STRING,
+    tentinh: DataTypes.STRING,
+    tenhuyen: DataTypes.STRING,
+    tenxa: DataTypes.STRING,
+    chitiet: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Diachi',
