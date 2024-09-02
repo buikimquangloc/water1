@@ -1,6 +1,15 @@
+const db = require("../models/index");
 
-const getProduct = (req, res) => {
-    res.send('Welcome Home!!');
+const getProduct = async (req, res) => {
+    try {
+        let data = await db.Users.findAll();
+        console.log(data);
+        return res.send({
+            data: JSON.stringify(data)
+        });
+    }catch (e) {
+        console.error(e);
+    }
 }
 
 module.exports = {

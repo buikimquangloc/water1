@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     ngaynhan: DataTypes.DATE,
     danhgia: DataTypes. INTEGER,
     phanhoi: DataTypes.STRING,
-    trangthai: DataTypes.ENUM,
+    trangthai: DataTypes.ENUM('Chờ xác nhận', 'Đã duyệt', 'Đang giao', 'Đã giao'),
     // makh: DataTypes.STRING,
     // masp: DataTypes.STRING,
     // manv: DataTypes.STRING,
