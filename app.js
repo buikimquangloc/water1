@@ -1,11 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 
-// import connection from './app/config/connection';
-
 const app = express();
 
 const productsRouter = require('./app/routes/product.route');
+const usersRouter = require('./app/routes/users.route');
 
 app.use(cors());
 app.use(express.json());
@@ -17,5 +16,6 @@ app.get("/", (req, res) => {
 });
 
 app.use('/products', productsRouter);
+app.use('/users', usersRouter);
 
 module.exports = app;
