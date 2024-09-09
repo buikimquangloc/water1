@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, Divider } from '@mui/material';
-import sodabh from '../../../asset/image/soda_bacha.png'
+import sodabh from '../../../asset/product/soda_bacha.png'
 
 export default function ActionAreaCard() {
     return (
@@ -12,8 +12,6 @@ export default function ActionAreaCard() {
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    // height="100%"
-                    // width="100%"
                     alt="soda_bac_ha"
                     src={sodabh}
                 />

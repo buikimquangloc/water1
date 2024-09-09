@@ -34,13 +34,13 @@ export const mainListItems = (
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Báo Cáo" />
+      <ListItemText primary="Sản Phẩm " />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
-      <ListItemText primary="Tích hợp" />
+      <ListItemText primary="Báo Cáo" />
     </ListItemButton>
   </React.Fragment>
 );
