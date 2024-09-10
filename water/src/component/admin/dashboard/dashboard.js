@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ListSubheader from '@mui/material/ListSubheader';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -13,24 +14,22 @@ import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
-
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import PeopleIcon from '@mui/icons-material/People';
+import LayersIcon from '@mui/icons-material/Layers';
+import Products from "../products/product";
+import Customers from '../customers/customer';
+import Orders from '../orders/order';
+import Reports from '../reports/report';
+import DataMonth from '../statisticalData/month';
 
 const drawerWidth = 240;
 
@@ -78,13 +77,37 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
+  const [currentContent, setCurrentContent] = React.useState('dashboard');
+
   const toggleDrawer = () => {
     setOpen(!open);
+  };
+
+  const handleMenuItemClick = (content) => {
+    setCurrentContent(content);
+  };
+
+  const renderContent = () => {
+    switch (currentContent) {
+      case 'dashboard':
+        return ;
+      case 'orders':
+        return <Orders />;
+      case 'products':
+        return <Products />;
+      case 'customers':
+        return <Customers />;
+      case 'reports':
+        return <Reports />;
+      case 'datamonths' :
+        return <DataMonth />;
+      default:
+        return;
+    }
   };
 
   return (
@@ -119,7 +142,7 @@ export default function Dashboard() {
               Dashboard
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={0} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -140,11 +163,49 @@ export default function Dashboard() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            <ListItemButton onClick={() => handleMenuItemClick('dashboard')}>
+              <ListItemIcon>
+                <DashboardIcon />
+              </ListItemIcon>
+              <ListItemText primary="Dashboard" />
+            </ListItemButton>
+            <ListItemButton onClick={() => handleMenuItemClick('orders')}>
+              <ListItemIcon>
+                <ShoppingCartIcon />
+              </ListItemIcon>
+              <ListItemText primary="Đơn Hàng" />
+            </ListItemButton>
+            <ListItemButton onClick={() => handleMenuItemClick('products')}>
+              <ListItemIcon>
+                <LayersIcon />
+              </ListItemIcon>
+              <ListItemText primary="Sản Phẩm" />
+            </ListItemButton>
+            <ListItemButton onClick={() => handleMenuItemClick('customers')}>
+              <ListItemIcon>
+                <PeopleIcon />
+              </ListItemIcon>
+              <ListItemText primary="Khách Hàng" />
+            </ListItemButton>
+            <ListItemButton onClick={() => handleMenuItemClick('reports')}>
+              <ListItemIcon>
+                <DashboardIcon />
+              </ListItemIcon>
+              <ListItemText primary="Báo Cáo" />
+            </ListItemButton>
+            <Divider />
+            <ListSubheader component="div" inset>
+              Thống kê
+            </ListSubheader>
+            <ListItemButton onClick={() => handleMenuItemClick('datamonths')}>
+              <ListItemIcon>
+                <DashboardIcon />
+              </ListItemIcon>
+              <ListItemText primary="Tháng này" />
+            </ListItemButton>
           </List>
         </Drawer>
+
         <Box
           component="main"
           sx={{
@@ -160,34 +221,12 @@ export default function Dashboard() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                </Paper>
-              </Grid>
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                </Paper>
-              </Grid>
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  {renderContent()}
                 </Paper>
               </Grid>
             </Grid>
-            <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
       </Box>

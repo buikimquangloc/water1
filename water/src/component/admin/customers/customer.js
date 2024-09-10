@@ -1,10 +1,7 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography } from '@mui/material';
 import { styled } from '@mui/system';
-import ProductOne from '../../../asset/product/sinh-to-bo.jpg';
-import ProductTwo from '../../../asset/product/tra-chanh-day.jpg';
-import ProductThree from '../../../asset/product/tra-dao-cam-sa.jpg';
-import ProductFour from '../../../asset/product/nuoc-ep-xoai.jpg';
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
@@ -19,28 +16,27 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 }));
 
-const Products = () => {
+const Customers = () => {
   return (
     <Paper elevation={3} style={{ padding: '16px', borderRadius: '8px' }}>
-      <Typography variant="h6" gutterBottom>
-        Danh sách sản phẩm
+      <Typography variant="h5" gutterBottom>
+        Danh sách khách hàng
       </Typography>
       <TableContainer>
         <Table>
           <TableHead>
             <TableRow>
-              <StyledTableCell>Tên Sản Phẩm</StyledTableCell>
-              <StyledTableCell>Category</StyledTableCell>
-              <StyledTableCell>Giá</StyledTableCell>
-              <StyledTableCell>Số lượng</StyledTableCell>
-              <StyledTableCell>Lợi nhuận</StyledTableCell>
+              <StyledTableCell>Tên khách hàng</StyledTableCell>
+              <StyledTableCell>Địa chỉ</StyledTableCell>
+              <StyledTableCell>Số điện thoại</StyledTableCell>
+              <StyledTableCell>Email</StyledTableCell>
+              <StyledTableCell>Đơn hàng</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             <TableRow>
               <StyledTableCell>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={ProductOne} alt="Sinh Tố Bơ" style={{ width: '64px', height: '64px', objectFit: 'cover', borderRadius: '4px' }} />
                   <Typography variant="body2" style={{ marginLeft: '16px' }}>Sinh Tố Bơ</Typography>
                 </div>
               </StyledTableCell>
@@ -52,7 +48,6 @@ const Products = () => {
             <TableRow>
               <StyledTableCell>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={ProductTwo} alt="Trà Chanh Dây" style={{ width: '64px', height: '64px', objectFit: 'cover', borderRadius: '4px' }} />
                   <Typography variant="body2" style={{ marginLeft: '16px' }}>Trà Chanh Dây</Typography>
                 </div>
               </StyledTableCell>
@@ -64,7 +59,6 @@ const Products = () => {
             <TableRow>
               <StyledTableCell>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={ProductThree} alt="Trà Đào Cam Sả" style={{ width: '64px', height: '64px', objectFit: 'cover', borderRadius: '4px' }} />
                   <Typography variant="body2" style={{ marginLeft: '16px' }}>Trà Đào Cam Sả</Typography>
                 </div>
               </StyledTableCell>
@@ -76,7 +70,6 @@ const Products = () => {
             <TableRow>
               <StyledTableCell>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={ProductFour} alt="Nước Ép Xoài" style={{ width: '64px', height: '64px', objectFit: 'cover', borderRadius: '4px' }} />
                   <Typography variant="body2" style={{ marginLeft: '16px' }}>Nước Ép Xoài</Typography>
                 </div>
               </StyledTableCell>
@@ -92,4 +85,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Customers;

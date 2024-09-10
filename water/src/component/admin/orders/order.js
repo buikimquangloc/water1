@@ -19,11 +19,11 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 }));
 
-const Products = () => {
+const Orders = () => {
   return (
     <Paper elevation={3} style={{ padding: '16px', borderRadius: '8px' }}>
       <Typography variant="h6" gutterBottom>
-        Danh sách sản phẩm
+        Danh sách đơn hàng
       </Typography>
       <TableContainer>
         <Table>
@@ -92,4 +92,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Orders;
